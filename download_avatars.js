@@ -25,23 +25,22 @@ function getRepoContributors(repoOwner, repoName, cb) {
       console.error (err);
     }
     var data = JSON.parse(body);
-    //console.log(data)
     cb(err, data);
   });
 }
 
-function downloadImageByURL (url, filePath) {
+function downloadImageByURL(url, filePath) {
   //console.log('downloading... ', url, filePath)
    request.get(url).pipe(fs.createWriteStream(filePath));
 }
 
-if (!arg[0] || !arg[1] ) {
+if (!arg[0] || !arg[1]) {
   console.log("Errors:", error);
   throw "Input must be two arguments";;
 }
 
 getRepoContributors(arg[0], arg[1], function(error, result) {
-  for (var i=0; i<result.length; i++) {
+  for (var i = 0; i < result.length; i++) {
     downloadImageByURL(result[i].avatar_url, './avatars/' + result[i].login + '.png');
   }
 

@@ -12,7 +12,9 @@ Install all dependencies with the command "npm install"
 
 Following the format: `node download_avatars.js <owner> <repo>`, this program should be executed from the command line, in the following manner:
 
-`GITHUB_USER=yourusername GITHUB_TOKEN=yourtoken node download_avatars.js jquery jquery`
+`GITHUB_USER="username" GITHUB_TOKEN="token" node download_avatars.js jquery jquery`
+
+Please fill in your own username and token into the quotes.
 
 ## Goal
 

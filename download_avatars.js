@@ -40,8 +40,8 @@ if (!arg[0] || !arg[1]) {
 }
 
 getRepoContributors(arg[0], arg[1], function(error, result) {
+  console.log("Downloading avatars...check your /avatars folder");
   for (var i = 0; i < result.length; i++) {
     downloadImageByURL(result[i].avatar_url, './avatars/' + result[i].login + '.png');
   }
-
 });
